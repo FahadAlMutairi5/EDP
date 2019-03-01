@@ -320,7 +320,8 @@
                     </h5>
                   </div>
                   <div>
-                      <form action="{% url 'email-me' %}" method="post" role="form" class="contactForm">
+                      <form action="{% url 'email-me' %}" method="POST" role="form" class="contactForm">
+                        {% csrf_token %}
                       <div id="sendmessage">Your message has been sent. Thank you!</div>
                       <div id="errormessage">no your massge</div>
                       <div class="row">
@@ -368,7 +369,7 @@
                     <ul class="list-ico">
                       <li><span class="fas fa-map-marked-alt"></span>Location Soon ..</li>
                       <li><span class="fas fa-phone-square"></span> (966) 582270666</li>
-                      <li><span class="fas fa-envelope"></span> devsoft5E@gmail.com</li>
+                      <li><span class="fas fa-envelope"></span> devsof5e@gmail.com</li>
                     </ul>
                   </div>
                   <div class="socials">

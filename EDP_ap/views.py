@@ -28,12 +28,19 @@ def send_email_fun(request):
     subject = request.POST.get('subject', '')
     message = request.POST.get('message', '')
     from_email = request.POST.get('email', '')
+
+    mssg = """
+        """+message+"""
+
+        """+from_email+"""
+    """
+    print (from_email)
     if subject and message and from_email:
         try:
-            send_mail(subject+name, message, from_email, ['admin@example.com'])
+            send_mail(subject+name, mssg, from_email, ['devsof5e@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return HttpResponseRedirect('/contact/thanks/')
+        return HttpResponseRedirect('')
     else:
         # In reality we'd use a form class
         # to get proper validation errors.

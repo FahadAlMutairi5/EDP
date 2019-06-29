@@ -7,8 +7,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 def list_p(request):
     prots = ProtModel.objects.all()
+
+    length = len(prots)
+
     context = {
 
+        "len"  : length,
         "prots" : prots,
     }
     return render(request, 'index.html', context)
